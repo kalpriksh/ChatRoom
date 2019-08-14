@@ -4,38 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="/socket.io/socket.io.js"></script>
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
-  <script>
-    var socket = io();
-
-    $(document).ready(function(){
-    console.log("JQuery Loaded");
-  });
-
-  $('#message').keydown(function(){
-    var msg = this.value();
-    if(event.which === 13){
-      console.log('Message '+ msg);
-    }
-  });
-
-  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="functionality.js"></script>
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Socket-Chat</title>
 </head>
 
-
-
-
 <body>
 
   <label for="message">Enter Message and hit Enter</label>
-  <input type="text" id="message">
-  <div class="message"></div>
-
+  <input type="text" class="input1"> 
+  
   <hr><hr>
   Messages
 
