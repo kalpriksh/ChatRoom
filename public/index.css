@@ -1,0 +1,30 @@
+.chatbox{
+    background-color: whitesmoke;
+    padding: 10px;
+}
+.chatInput{
+    border-radius: 5px;
+}
+.textbox{
+    border: none;
+    width: 100%;
+    resize: none;
+}
+.chatbody{
+    margin-top:100px; 
+}
+.chatbubble{
+    text-align: center;
+    border-radius: 20px;
+}
+.right-bubble{
+    background-color: #c9f7bb;
+    margin-left: 80%;
+}
+.left-bubble{
+    background-color: #a2f0f4;
+    margin-right: 80%;
+}
+.space-bubble{
+    height: 20px;
+}

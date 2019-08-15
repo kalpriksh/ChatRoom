@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
   <script src="/socket.io/socket.io.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="functionality.js"></script>
@@ -11,20 +13,29 @@
 </head>
 
 <body>
-  <div class="message">
-    <label for="message">Enter Message and hit Enter</label>
-    <input type="text" class="input1"> 
-  </div>
-  
-  <div class="quote">
+  <nav class="navbar navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">ChatRoom.io</a>
+  </nav>
+
+    <div class="chatbody container">
+          <div class="chatbox" id="chatbox">
+            <div class="chatbubble right-bubble">
+              hi!
+            </div>
+            <div class="space-bubble"></div>
+            <div class="chatbubble left-bubble">
+                yo!
+              </div>
+          </div>
+          
+          <div class="chatInput container fixed-bottom">
+                <div class="chat-input-area">
+                <textarea type="text" class="textbox" id="input1" placeholder="Type a new message"></textarea>
+          </div>
+          
+    </div>    
     
-  <div>Quote Of the Day!</div>
-  <textarea name="quoteOfDay" id="quoteOfDay" cols="50" rows="5"></textarea>
-
-  </div>
-
-  <hr><hr>
-  Messages
+</div>
 
 </body>
 

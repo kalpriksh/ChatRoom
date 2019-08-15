@@ -25,8 +25,19 @@ io.on('connection', function(socket){
   }
   );
 
-  //event 2
-  
+  //event 2 receiving from a socket and emitting for all
+  socket.on('myMsg',function(data){
+    
+    io.emit('All',{msg:data.msg});
+    
+  });  
+
+  //event 3 private message!
+
+  socket.on('private message', function(from,msg){
+      console.log('I received a pvt message by ',from,' saying ', msg);
+  });
+
 
   //when user disconnects
   socket.on('disconnect', function(){
