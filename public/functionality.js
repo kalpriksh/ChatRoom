@@ -9,19 +9,13 @@ $(document).ready(function(){
     socket.on('news',async function (stuff) {
     
         console.log(stuff.data);
-        socket.emit('printer',{ name:'user1' });
+        console.log(stuff.tQuote);
 
-        //trying to chain events
-        socket.on('printer', function (data) {
-            console.log(data);
-            $(".input1").val(data.data);
-        });
-
+        $("#quoteOfDay").val(stuff.tQuote);
+            
+        
     });
-
     
-
-
     console.log('Functionality Loaded');
     
     $(".input1").keydown(function(event){
