@@ -14,14 +14,16 @@ $(document).ready(function(){
         $("#quoteOfDay").val(stuff.tQuote);
     });
 
+    //to display message to all
     socket.on('All', function(data){
         console.log(data.msg);
-        $("#chatbox").append('<div class="chatbubble right-bubble">'+data.msg+'</div>');
+        $("#chatbox").append('<div class="chatbubble blue-bubble">'+data.msg+'</div>');
         $("#chatbox").append('<div class="space-bubble"></div>');
     });
     
     console.log('Functionality Loaded');
     
+    //textbox funtionality
     $("#input1").keydown(function(event){
         if(event.keyCode === 13)
         {
@@ -32,16 +34,5 @@ $(document).ready(function(){
         }    
 
     });
-
-    $("#input2").keydown(function(event){
-        if(event.keyCode === 13)
-            {
-                event.preventDefault();
-                socket.emit('private message',{msg:$("#input2").val()});
-                $("#input2").val("");
-                $("#input2").attr("placeholder", "Type a new private message").val("").focus().blur();
-            }    
-    
-        });
 
 });

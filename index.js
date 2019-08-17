@@ -32,6 +32,20 @@ io.on('connection', function(socket){
     
   });  
 
+  //event 3
+  //on connection to a namespace
+
+  var chat = io
+  .of('/chat')
+  .on('connection',function(socket){
+    socket.emit('single_msg',{
+      data:'legends never die'
+    })
+    chat.emit('single_msg',{
+      data:'message from chat.emit'
+    })
+  });
+
   //event 3 private message!
 
   socket.on('private message', function(from,msg){
