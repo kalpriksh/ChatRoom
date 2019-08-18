@@ -18,7 +18,7 @@ io.on('connection', function(socket){
   
   //event 1
   //on connection send object {data : Hello + socket ID}
-  socket.emit('news',
+  socket.emit('news',                                                                         
   {
     data:'Hello '+socket.id,
     tQuote:'to err is to human to forgive is to divine'
