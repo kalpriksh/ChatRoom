@@ -30,7 +30,15 @@ $(document).ready(function(){
             event.preventDefault();
             socket.emit('myMsg',{msg:$("#input1").val()});
             $("#input1").val("");
-            $("#input1").attr("placeholder", "Type a new message").val("").focus().blur();
+            $("#input1").attr("placeholder", "Type a new message").val("");
+
+            $('#input1').on('blur',function () { 
+                var blurEl = $(this); 
+                setTimeout(function() {
+                    blurEl.focus()
+                }, 10);
+            });
+            $('#chatbox').animate({scrollTop: $('#chatbox').prop("scrollHeight")}, 500);
         }    
 
     });

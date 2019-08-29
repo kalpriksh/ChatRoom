@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="index.css">
   <script src="/socket.io/socket.io.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
   <script src="functionality.js"></script>
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Socket-Chat</title>
@@ -16,30 +17,68 @@
   <nav class="navbar navbar-dark bg-custom fixed-top">
     <a class="navbar-brand navbar-brand-color" href="#">ChatRoom.io</a>
   </nav>
-
-    <div class="chatbody container">
-          <div class="chatbox" id="chatbox">
-            <div class="chatbubble green-bubble">
-              [you]: hi!
-            </div>
-            <div class="space-bubble"></div>
-            <div class="chatbubble red-bubble">
-                [Godly_Kaos]: sup!
-              </div>
-              <div class="space-bubble"></div>
-              <div class="chatbubble blue-bubble">
-                [Znake._.]: yo!
-              </div>
-          </div>
-          
-          <div class="chatInput container fixed-bottom">
-                <div class="chat-input-area">
-                <textarea type="text" class="textbox" id="input1" placeholder="Type a new message"></textarea>
-          </div>
-          
-    </div>    
     
-</div>
+    <div class="chatbody container-outer">
+        
+        <div class="left container-inner">
+            <!-- fixed div-->
+            <div class="private-chat">
+              Private Chat
+            </div>
+            <!-- . -->
+            
+            <div class="space"></div>
+            <div class="space"></div>
+            <div class="space"></div>
+           
+            <div class="user-info">
+              <img src="./images/user.png" class="image img-fluid" alt="oops">
+              
+              <div class="user-name">
+                Kalpriksh Bist
+              </div>
+              
+            </div>
+
+            <div class="space"></div>
+
+            <div class="user-info">
+                <img src="./images/user.png" class="img-fluid image" alt="oops">
+                
+                <div class="user-name">
+                  Kalpriksh Bist
+                </div>
+                
+              </div>
+
+        </div>  
+
+        
+          
+          <div class="chatbox right" id="chatbox">
+            
+            <div class="chat-field">
+                <div class="chatbubble green-bubble">
+                    [you]: hi!
+                  </div>
+                  <div class="space-bubble"></div>
+                  <div class="chatbubble red-bubble">
+                      [Godly_Kaos]: sup!
+                    </div>
+                    <div class="space-bubble"></div>
+                    <div class="chatbubble blue-bubble">
+                      [Znake._.]: yo!
+                    </div>
+            </div> 
+              
+          </div>
+          <div class="chatInput">
+              <div class="chat-input-area">
+              <textarea type="text" class="textbox" id="input1" placeholder="Type a new message"></textarea>
+              </div>
+            </div>
+        
+    </div>    
 
 </body>
 
