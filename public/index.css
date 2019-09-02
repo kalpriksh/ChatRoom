@@ -19,10 +19,13 @@
     color: #ff7171;
 }
 .chatbox{
-    overflow-y:scroll ;
     border-radius: 2px;
     padding: 10px;
     height: 500px;
+}
+#chat-field{
+    overflow-y:scroll ;
+    height: 100%;
 }
 .chatInput{
     flex-grow: 2;

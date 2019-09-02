@@ -9,6 +9,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
   <script src="functionality.js"></script>
+  <script src="socketing.js"></script>
+  <script src="templating.js"></script>
+
+
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Socket-Chat</title>
 </head>
@@ -53,11 +57,13 @@
 
         </div>  
 
-        
-          
+        <!-- chatbox html -->
+        <script id = 'chatbox-header-template' type='text/x-handlebar-template'>
+          <h4>{{chatting-with}}</h4>
+        </script>  
           <div class="chatbox right" id="chatbox">
-            
-            <div class="chat-field">
+            <div id="chatbox-header" ></div>
+            <div class="chat-field" id="chat-field">
                 <div class="chatbubble green-bubble">
                     [you]: hi!
                   </div>
@@ -76,7 +82,7 @@
               <div class="chat-input-area">
               <textarea type="text" class="textbox" id="input1" placeholder="Type a new message"></textarea>
               </div>
-            </div>
+          </div>
         
     </div>    
 

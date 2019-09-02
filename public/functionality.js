@@ -1,9 +1,6 @@
-$(document).ready(function(){
-
-    console.log('JQuery Loaded');
-    
+ $(document).ready(function(){
+    console.log('Functionality Loaded');
     console.log('SocketIO Loaded');
-
     var socket = io('http://localhost:3000/')
     
     socket.on('news',async function (stuff) {
@@ -17,12 +14,9 @@ $(document).ready(function(){
     //to display message to all
     socket.on('All', function(data){
         console.log(data.msg);
-        $("#chatbox").append('<div class="chatbubble blue-bubble">'+data.msg+'</div>');
-        $("#chatbox").append('<div class="space-bubble"></div>');
+        $("#chat-field").append('<div class="chatbubble blue-bubble">'+data.msg+'</div>');
+        $("#chat-field").append('<div class="space-bubble"></div>');
     });
-    
-    console.log('Functionality Loaded');
-    
     //textbox funtionality
     $("#input1").keydown(function(event){
         if(event.keyCode === 13)
@@ -38,7 +32,7 @@ $(document).ready(function(){
                     blurEl.focus()
                 }, 10);
             });
-            $('#chatbox').animate({scrollTop: $('#chatbox').prop("scrollHeight")}, 500);
+            $('#chat-field').animate({scrollTop: $('#chat-field').prop("scrollHeight")}, 500);
         }    
 
     });
