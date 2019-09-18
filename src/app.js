@@ -14,6 +14,9 @@ const server = http.createServer(app);
 const io = socketio(server);
 
 
+console.log('namaste');
+
+
 // paths defined
 const viewsPath = path.join(__dirname,'../templates/views');
 const partialsPath = path.join(__dirname,'../templates/partials');
