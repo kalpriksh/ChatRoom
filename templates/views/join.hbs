@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles/join.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat-Room</title>
+</head>
+<body>
+
+<div class="join-info" id="join-info">
+<h1>Join</h1>
+  <form action="/chat">
+  <div class="form-group">
+        <label for="username">username:</label>
+        <input type="text" class="form-control" name="username" id="input-username" placeholder="username" required> 
+        <small class="form-text">username should be unique</small>
+  </div>
+  <div class="form-group">
+        <label for="room">room:</label>
+        <input type="text" class="form-control" name="room" id="input-room" placeholder="room" required>
+  </div>
+        <button type = "submit" class="btn-primary btn-join btn-lg btn-block">Join!</button>
+
+  </form>  
+    
+</div>
+
+</body>
+</html>

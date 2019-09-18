@@ -1,0 +1,23 @@
+.join-info{
+    color: white;
+    padding: 30px;
+    background-color: #a765e2;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height:60%;
+    width: 40%;
+    min-width: 300px;
+    max-width: 400px;
+}
+.btn-join{
+ margin-top:10%; 
+ 
+}
+body{
+    background-color: black;
+}

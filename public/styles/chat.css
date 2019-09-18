@@ -1,0 +1,82 @@
+
+.right-screen{
+    background-color:white;
+    height: 100vh;
+}
+.user-space{
+    background-color: #7756f1;
+    color: white;
+    height: 100vh;
+}
+.chat-space{
+    background-color: white;
+    display: table;
+    width: 100%;
+}
+.chat-bubble-space{
+    background-color: white;
+    overflow-y: scroll;
+    height: 90vh;
+}
+@media (max-width: 768px){
+    .user-space{
+        display: none;
+    }
+}
+
+.chat-bubble{
+    min-height: 40px;
+    background-color: #f3d9bc;
+    border-radius: 5px;
+    display: table;
+    min-width: 60px;
+    padding: 5px;
+    max-width: 50%;
+}
+.chat-bubble-mine{
+    min-height: 40px;
+    background-color: #a4e0ac;
+    border-radius: 5px;
+    display: table;
+    min-width: 40px;
+    max-width: 50%;
+    padding: 5px;
+}
+.chat-bubble-server{
+    min-height: 20px;
+    background-color: #c2b5b586;
+    border-radius: 5px;
+    display: table;
+    min-width: 40px;
+    max-width: 50%;
+    padding: 5px;
+}
+.bubble-invisible{
+    color: #faefe2;
+    background-color: #faefe2;
+}
+.timestamp{
+    max-height: 15px;
+    width: 100%;
+}
+.green{
+    background-color: green;
+}
+.red{
+    background-color: red;
+}
+.blue{
+    background-color: blue;
+}
+.yellow{
+    background-color: yellow;
+}
+
+.fixbottom{
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+}
+.chat-button{
+    height: 100%;
+}

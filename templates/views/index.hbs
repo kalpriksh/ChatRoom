@@ -1,23 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="index.css">
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-  <script src="functionality.js"></script>
-  <script src="socketing.js"></script>
-  <script src="templating.js"></script>
-
-
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Socket-Chat</title>
-</head>
-
-<body background="background_img.jpg">
+    {{>head}}
+<body background="/background_img.jpg">
   <nav class="navbar navbar-dark bg-custom fixed-top">
     <a class="navbar-brand navbar-brand-color" href="#">ChatRoom.io</a>
   </nav>
@@ -35,19 +19,12 @@
             <div class="space"></div>
             <div class="space"></div>
            
-            <div class="user-info">
-              <img src="./images/user.png" class="image img-fluid" alt="oops">
-              
-              <div class="user-name">
-                Kalpriksh Bist
-              </div>
-              
-            </div>
+            {{>userInfo}}
 
             <div class="space"></div>
 
             <div class="user-info">
-                <img src="./images/user.png" class="img-fluid image" alt="oops">
+                <img src="" class="img-fluid image" alt="oops">
                 
                 <div class="user-name">
                   Kalpriksh Bist
@@ -59,8 +36,8 @@
 
         <!-- chatbox html -->
         <script id = 'chatbox-header-template' type='text/x-handlebar-template'>
-          <h4>{{chatting-with}}</h4>
-        </script>  
+        </script>
+          
           <div class="chatbox right" id="chatbox">
             <div id="chatbox-header" ></div>
             <div class="chat-field" id="chat-field">
@@ -69,7 +46,9 @@
                   </div>
                   <div class="space-bubble"></div>
                   <div class="chatbubble red-bubble">
-                      [Godly_Kaos]: sup!
+                      <div class="chat-content">
+                        [Godly_Kaos]: sup!
+                      </div>
                     </div>
                     <div class="space-bubble"></div>
                     <div class="chatbubble blue-bubble">
@@ -78,11 +57,7 @@
             </div> 
               
           </div>
-          <div class="chatInput">
-              <div class="chat-input-area">
-              <textarea type="text" class="textbox" id="input1" placeholder="Type a new message"></textarea>
-              </div>
-          </div>
+          {{>chatinput}}
         
     </div>    
 
