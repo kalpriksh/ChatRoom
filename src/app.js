@@ -67,12 +67,26 @@ io.on('connection',(socket)=>{
 
     socket.on('messageRoom',({ time, content }) => {
         const user = getUser(socket.id);
-        socket.broadcast.to(user.room).emit('allroom',{username:user.username, time, content});
+        socket.broadcast.to(user.room).emit('allRoom',{username:user.username, time, content});
         io.to(user.room).emit('roomData',{
             room: user.room,
             users: getUsersInRoom(user.room)
         })
     });
+
+    // sendlocation on button click
+    socket.on('sendLocation',(position,callback) => {
+        const user = getUser(socket.id);
+        var message = 'http://google.com/maps?q='+position.latitude+"," +position.longitude;
+        
+        socket.broadcast.to(user.room).emit('location',{
+            username:user.username,
+            time:position.time,
+            content:message
+        });
+        
+        setTimeout(()=>{callback()},2000);
+    })
 
     socket.on('disconnect',() => {
         const user = removeUser(socket.id);

@@ -80,3 +80,8 @@
 .chat-button{
     height: 100%;
 }
+
+.chat-bubble-mine:first-child{
+    background-color: black;
+    margin-top: 30px;
+}
