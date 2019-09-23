@@ -88,6 +88,12 @@ io.on('connection',(socket)=>{
         setTimeout(()=>{callback()},2000);
     })
 
+    // user is typing 
+    socket.on('isTyping',({userTyping})=>{
+        const user = getUser(socket.id);
+        socket.broadcast.to(user.room).emit('tempMessage',{ username : user.username, isTyping : userTyping });            
+    })
+
     socket.on('disconnect',() => {
         const user = removeUser(socket.id);
         const isConnecting = false;

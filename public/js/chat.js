@@ -72,10 +72,21 @@ socket.on('roomData',({ room, users }) => {
     $roomname.text(room);
     $userlist.html("");
     users.forEach(user => {
-        let newUserName = '<p class="font-weight-normal">'+user.username+'</p>'
+        let newUserName = `<p class="font-weight-normal" id = "`+user.username+`">`+user.username+`</p>`
         $userlist.append(newUserName)
     });
     
+})
+
+socket.on('tempMessage',({username,isTyping})=>{
+    let divID = `#`+username;
+    if(isTyping)
+    $(divID).append(`<small id = "`+username+`-small">  (typing)</small>`)
+    else
+    {
+        let delDiv = `#`+username+`-small`;
+        $(delDiv).remove();
+    }
 })
 
 // function to create a chat bubble
@@ -120,10 +131,36 @@ $locationbutton.click(() =>{
             $locationbutton.attr('disabled',false);
             console.log('location shared');
         });
-    });
-
-    
+    });    
 }) 
+
+//#region userIsTyping functionality
+    
+    let isTyping = false;
+    let timeout = undefined;
+
+// on pressing keys
+$chatinput.keypress(()=>{
+    
+    if(!isTyping)
+    {
+        isTyping = true;
+        socket.emit('isTyping',{userTyping:isTyping});
+        timeout = setTimeout(timeoutFunction,1000);
+    }
+    else
+    {
+        clearTimeout(timeout);
+        timeout = setTimeout(timeoutFunction,1000);
+    }
+
+});
+
+timeoutFunction = () => {
+    isTyping = false;
+    socket.emit('isTyping',{userTyping:isTyping});    
+};
+//#endregion
 
 
     
